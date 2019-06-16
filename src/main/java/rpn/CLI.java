@@ -1,18 +1,20 @@
 package rpn;
 
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import rpn.bus.InMemoryBus;
+import rpn.message.ExpressionMessage;
+import rpn.consumer.TokenizerConsumer;
+
+import java.util.UUID;
 
 public class CLI {
-    public static final void main(String[] args) {
-        String expression = Stream.of(args).collect(Collectors.joining(" "));
+    public static void main(String[] args) {
+        InMemoryBus bus = new InMemoryBus();
+        bus.subscribe(ExpressionMessage.MESSAGE_TYPE, new TokenizerConsumer(bus));
+        //bus.subscribe(ExpressionMessage.MESSAGE_TYPE, new TokenizerConsumer(bus));
 
-        System.out.println("About to evaluate '" + expression + "'");
-        long result = evaluate(expression);
-        System.out.println("> " + result);
-    }
-
-    static long evaluate(String expression) {
-        return 0;
+        String expressionId = UUID.randomUUID().toString();
+        ExpressionMessage expressionMessage = new ExpressionMessage("1 2 +", expressionId);
+        bus.publish(expressionMessage);
+        System.out.println(expressionMessage);
     }
 }
