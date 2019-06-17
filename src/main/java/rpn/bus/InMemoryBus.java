@@ -11,10 +11,12 @@ import java.util.Map;
 public class InMemoryBus implements Bus {
 
     private final Map<String, List<Consumer>> consumersByType = new HashMap<>();
+    private boolean enableLog = false;
 
     @Override
     public void publish(Message message) {
-        System.out.println(message);
+        if(enableLog) System.out.println(message);
+
         List<Consumer> consumers = consumersByType.get(message.messageType());
         if(consumers == null)
             return;
@@ -26,5 +28,9 @@ public class InMemoryBus implements Bus {
     public void subscribe(String messageType, Consumer consumer) {
         List<Consumer> consumers = consumersByType.computeIfAbsent(messageType, k -> new ArrayList<>());
         consumers.add(consumer);
+    }
+
+    public void activateLog(boolean enableLog) {
+        this.enableLog = enableLog;
     }
 }

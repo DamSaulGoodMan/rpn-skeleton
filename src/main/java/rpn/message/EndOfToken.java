@@ -1,16 +1,23 @@
 package rpn.message;
 
 public class EndOfToken implements Message {
-    public EndOfToken(String s) {
+    public final static String MESSAGE_TYPE = "eot";
+    public final String expressionId;
+
+    public EndOfToken(String expressionId) {
+        this.expressionId = expressionId;
     }
 
     @Override
     public String messageType() {
-        return null;
+        return MESSAGE_TYPE;
     }
 
     @Override
     public String toString() {
-        return "EndOfToken{}";
+        return "EndOfToken{" +
+                "expressionId='" + expressionId + '\'' +
+                "MESSAGE_TYPE='" + MESSAGE_TYPE + '\'' +
+                "}";
     }
 }

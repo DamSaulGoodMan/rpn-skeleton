@@ -6,7 +6,7 @@ public class TokenMessage implements Message {
     public static final String MESSAGE_TYPE = "message";
 
     private final String token;
-    private final String expressionId;
+    public final String expressionId;
 
     public TokenMessage(String token, String expressionId) {
         this.token = token;
@@ -16,6 +16,10 @@ public class TokenMessage implements Message {
     @Override
     public String messageType() {
         return MESSAGE_TYPE;
+    }
+
+    public String getToken() {
+        return token;
     }
 
     @Override

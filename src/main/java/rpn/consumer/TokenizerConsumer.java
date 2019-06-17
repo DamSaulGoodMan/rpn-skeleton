@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 public class TokenizerConsumer implements Consumer {
 
     private final Bus bus;
-
     public TokenizerConsumer(Bus bus) {
         this.bus = bus;
     }
