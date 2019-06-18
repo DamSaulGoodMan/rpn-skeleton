@@ -19,6 +19,11 @@ public class OperatorMessage implements Message {
     }
 
     @Override
+    public String id() {
+        return expressionId;
+    }
+
+    @Override
     public String toString() {
         return "OperatorMessage{" +
                 "stackNumbers=" + stackNumbers +

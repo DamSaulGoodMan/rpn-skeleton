@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/esgi-rpn.iml" filepath="$PROJECT_DIR$/esgi-rpn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rpn-skeleton.iml" filepath="$PROJECT_DIR$/.idea/rpn-skeleton.iml" />
     </modules>
   </component>
 </project>

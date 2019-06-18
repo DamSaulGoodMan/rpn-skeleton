@@ -16,6 +16,11 @@ public class ExpressionMessage implements Message {
         return MESSAGE_TYPE;
     }
 
+    @Override
+    public String id() {
+        return expressionId;
+    }
+
     public String expression() {
         return expression;
     }

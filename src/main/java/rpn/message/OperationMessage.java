@@ -20,6 +20,11 @@ public class OperationMessage implements Message {
     }
 
     @Override
+    public String id() {
+        return expressionId;
+    }
+
+    @Override
     public String toString() {
         return "OperationMessage{" +
                 "operator='" + operator + '\'' +

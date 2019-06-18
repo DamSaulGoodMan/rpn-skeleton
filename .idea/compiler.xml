@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="esgi-rpn" />
+        <module name="rpn-skeleton" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="esgi-rpn" target="1.8" />
+      <module name="rpn-skeleton" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

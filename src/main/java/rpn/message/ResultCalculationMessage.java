@@ -19,6 +19,11 @@ public class ResultCalculationMessage implements Message {
     }
 
     @Override
+    public String id() {
+        return expressionId;
+    }
+
+    @Override
     public String toString() {
         return "ResultCalculationMessage{" +
                 "result=" + result +

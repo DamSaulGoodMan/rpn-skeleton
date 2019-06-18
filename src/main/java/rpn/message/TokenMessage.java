@@ -18,6 +18,11 @@ public class TokenMessage implements Message {
         return MESSAGE_TYPE;
     }
 
+    @Override
+    public String id() {
+        return expressionId;
+    }
+
     public String getToken() {
         return token;
     }
