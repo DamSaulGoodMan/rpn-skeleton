@@ -21,7 +21,9 @@ public class Addition implements Consumer {
     public void receive(Message message) {
         OperationMessage operationMessage = (OperationMessage) message;
 
+        System.out.println(operationMessage.stackNumbers.size());
         if(operationMessage.stackNumbers.size() < 2) {
+            System.out.println("??????????????????");
             bus.publish(new ExceptionsMessage(new MissingNumbersForOperation(2,
                     operationMessage.stackNumbers.toString()),
                     message.id()));

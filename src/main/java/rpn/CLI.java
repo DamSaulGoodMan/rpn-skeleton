@@ -34,7 +34,7 @@ public class CLI {
         bus.subscribe(ResultCalculationMessage.MESSAGE_TYPE, new DisplayResultConsumer());
 
         String expressionId = UUID.randomUUID().toString();
-        ExpressionMessage expressionMessage = new ExpressionMessage("1 2 -", expressionId);
+        ExpressionMessage expressionMessage = new ExpressionMessage("1 2 +", expressionId);
         bus.publish(expressionMessage);
     }
 }

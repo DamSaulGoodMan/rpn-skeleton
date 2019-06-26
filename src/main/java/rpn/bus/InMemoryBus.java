@@ -27,8 +27,8 @@ public class InMemoryBus implements Bus {
 
         List<Consumer> consumers = consumersByType.get(message.messageType());
         if(consumers == null) {
-            publish(new ExceptionsMessage(
-                    new InvalidMessageToken(message.messageType(), consumersByType.keySet()), message.id()));
+//            publish(new ExceptionsMessage(
+//                    new InvalidMessageToken(message.messageType(), consumersByType.keySet()), message.id()));
             return;
         }
 

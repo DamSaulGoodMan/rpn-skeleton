@@ -26,8 +26,8 @@ public class Calculator implements Consumer {
             else bus.publish(new OperationMessage(tokenMessage.getToken(), stackNumber, tokenMessage.expressionId));
         }
         else if(message instanceof OperatorMessage) {
-            OperatorMessage operatorMessage = (OperatorMessage) message;
-            stackNumber.addAll(operatorMessage.stackNumbers);
+            //OperatorMessage operatorMessage = (OperatorMessage) message;
+            //stackNumber.addAll(operatorMessage.stackNumbers);
         }
         else if(message instanceof EndOfToken) {
             EndOfToken endOfToken = (EndOfToken) message;
